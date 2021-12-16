@@ -319,7 +319,7 @@ Uint8List ecEncrypt(data, publicKey) {
 
       return concatUint8List(<Uint8List>[
         ephemeralPublicKey,
-        aesAuthEncryptInfos.tag,
+        aesAuthEncryptInfos.tag!,
         aesAuthEncryptInfos.encrypted
       ]);
     case 1:
@@ -334,7 +334,7 @@ Uint8List ecEncrypt(data, publicKey) {
           aesAuthEncrypt(data, secret.aesKey, secret.iv);
       return concatUint8List(<Uint8List>[
         hexToUint8List(privateKey.publicKey.toHex()),
-        aesAuthEncryptInfos.tag,
+        aesAuthEncryptInfos.tag!,
         aesAuthEncryptInfos.encrypted
       ]);
 
@@ -350,7 +350,7 @@ Uint8List ecEncrypt(data, publicKey) {
           aesAuthEncrypt(data, secret.aesKey, secret.iv);
       return concatUint8List(<Uint8List>[
         hexToUint8List(privateKey.publicKey.toHex()),
-        aesAuthEncryptInfos.tag,
+        aesAuthEncryptInfos.tag!,
         aesAuthEncryptInfos.encrypted
       ]);
 
